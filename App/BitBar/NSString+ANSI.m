@@ -61,6 +61,9 @@
       case 37:
         self[NSForegroundColorAttributeName] = [NSColor colorWithHexColorString:bold ? @"e5e5e5" : @"ffffff"];
         break;
+      case 38:
+        self[NSForegroundColorAttributeName] = [NSColor colorWithWebColorString:bold ? @"orange" : @"orange"];
+        break;
 
       case 39:
         [self removeObjectForKey:NSForegroundColorAttributeName];
