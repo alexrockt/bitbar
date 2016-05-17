@@ -44,7 +44,7 @@
         self[NSForegroundColorAttributeName] = [NSColor colorWithHexColorString:bold ? @"cd0000" : @"ff0000"];
         break;
       case 32:
-        self[NSForegroundColorAttributeName] = [NSColor colorWithHexColorString:bold ? @"00cd00" : @"00ff00"];
+        self[NSForegroundColorAttributeName] = [NSColor colorWithWebColorString:bold ? @"green" : @"green"];
         break;
       case 33:
         self[NSForegroundColorAttributeName] = [NSColor colorWithHexColorString:bold ? @"cdcd00" : @"ffff00"];
@@ -120,7 +120,7 @@
   NSMutableDictionary* attributes = [NSMutableDictionary.alloc init];
   NSArray* parts = [self componentsSeparatedByString:@"\033["];
   [result appendAttributedString:[NSAttributedString.alloc initWithString:parts.firstObject attributes:nil]];
-  
+
   for (NSString* part in [parts subarrayWithRange:NSMakeRange(1, parts.count - 1)]) {
     if (part.length == 0)
       continue;
